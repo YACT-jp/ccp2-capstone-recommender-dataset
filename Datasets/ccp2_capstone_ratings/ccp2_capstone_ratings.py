@@ -48,11 +48,11 @@ class Ccp2CapstoneRatings(tfds.core.GeneratorBasedBuilder):
   def _split_generators(self, dl_manager: tfds.download.DownloadManager):
     """Returns SplitGenerators."""
     # TODO(ccp2_capstone_ratings): Downloads the data and defines the splits
-    path = dl_manager.extract('../../RawData/modified_ratings.zip')
+    path = dl_manager.extract('../../RawData/clean_ratings.zip')
 
     # TODO(ccp2_capstone_ratings): Returns the Dict[split names, Iterator[Key, Example]]
     return {
-        'train': self._generate_examples(path / 'modified_ratings.csv'),
+        'train': self._generate_examples(path / 'clean_ratings.csv'),
     }
 
   def _generate_examples(self, path):

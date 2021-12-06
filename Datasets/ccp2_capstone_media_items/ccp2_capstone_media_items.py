@@ -45,11 +45,11 @@ class Ccp2CapstoneMediaItems(tfds.core.GeneratorBasedBuilder):
   def _split_generators(self, dl_manager: tfds.download.DownloadManager):
     """Returns SplitGenerators."""
     # TODO(ccp2_capstone_media_items): Downloads the data and defines the splits
-    path = dl_manager.extract('../../RawData/modified_media_items.zip')
+    path = dl_manager.extract('../../RawData/clean_media_items.zip')
 
     # TODO(ccp2_capstone_media_items): Returns the Dict[split names, Iterator[Key, Example]]
     return {
-        'train': self._generate_examples(path / 'modified_media_items.csv'),
+        'train': self._generate_examples(path / 'clean_media_items.csv'),
     }
 
   def _generate_examples(self, path):
